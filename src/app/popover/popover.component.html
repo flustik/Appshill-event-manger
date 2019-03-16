@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Personal Information</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logOut()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-list>
+  <ion-item >
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left"> Name </ion-col>
+          <ion-col>
+          <ion-input placeholder="Enter Name"></ion-input>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>
+<ion-item (click)="updateEmail()">
+  <ion-grid>
+        <ion-row>
+          <ion-col class="text-left">Email</ion-col>
+          <ion-col>
+          <ion-input placeholder="Enter Email"></ion-input>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>
+<ion-item>
+  <ion-label class="dob-label">Date of Birth</ion-label>
+  <ion-datetime
+  displayFormat="MMM D, YYYY"
+  pickerFormat="D MMM YYYY"
+
+  (ionChange)="updateDOB(birthDate)"
+  >
+</ion-datetime>
+</ion-item>
+<ion-item >
+      <ion-grid>
+        <ion-row>
+          <ion-col class="text-left">Password</ion-col>
+          <ion-col>
+          <ion-input placeholder="Enter Password"></ion-input>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>
+</ion-list>
+</ion-content>
